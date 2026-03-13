@@ -1,4 +1,4 @@
-package com.example.mydearmovies.roboletric.base
+package com.example.mydearmovies.robolectric.base
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.junit4.AndroidComposeTestRule

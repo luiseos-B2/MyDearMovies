@@ -1,4 +1,4 @@
-package com.example.mydearmovies.roboletric.screen.home
+package com.example.mydearmovies.robolectric.screen.home
 
 import androidx.paging.PagingData
 import com.example.mydearmovies.R
@@ -20,7 +20,7 @@ import io.mockk.mockk
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Test
 import org.robolectric.RuntimeEnvironment
-import com.example.mydearmovies.roboletric.base.BaseRobolectricTest
+import com.example.mydearmovies.robolectric.base.BaseRobolectricTest
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onAllNodesWithText

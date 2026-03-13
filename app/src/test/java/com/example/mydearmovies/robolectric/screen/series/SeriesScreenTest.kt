@@ -1,10 +1,10 @@
-package com.example.mydearmovies.roboletric.screen.movies
+package com.example.mydearmovies.robolectric.screen.series
 
-import androidx.paging.PagingData
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
+import androidx.paging.PagingData
 import com.example.mydearmovies.R
 import com.example.mydearmovies.core.theme.MyDearMoviesTheme
 import com.example.mydearmovies.domain.model.ContentModel
@@ -13,17 +13,17 @@ import com.example.mydearmovies.domain.result.DomainResult
 import com.example.mydearmovies.domain.usecase.GetGenresUseCase
 import com.example.mydearmovies.domain.usecase.GetMediaDiscoverUseCase
 import com.example.mydearmovies.domain.usecase.GetWatchProvidersUseCase
-import com.example.mydearmovies.feature.media.MoviesScreen
-import com.example.mydearmovies.feature.media.MoviesViewModel
+import com.example.mydearmovies.feature.media.SeriesScreen
+import com.example.mydearmovies.feature.media.SeriesViewModel
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Test
 import org.robolectric.RuntimeEnvironment
-import com.example.mydearmovies.roboletric.base.BaseRobolectricTest
+import com.example.mydearmovies.robolectric.base.BaseRobolectricTest
 
-class MoviesScreenTest : BaseRobolectricTest() {
+class SeriesScreenTest : BaseRobolectricTest() {
 
     @Test
     fun shouldDisplayScreenWhenLoaded() {
@@ -33,12 +33,12 @@ class MoviesScreenTest : BaseRobolectricTest() {
 
         composeRule.setContent {
             MyDearMoviesTheme {
-                MoviesScreen(viewModel = viewModel)
+                SeriesScreen(viewModel = viewModel)
             }
         }
 
         composeRule.onNodeWithText(
-            RuntimeEnvironment.getApplication().getString(R.string.media_title_movies)
+            RuntimeEnvironment.getApplication().getString(R.string.media_title_series)
         ).assertIsDisplayed()
     }
 
@@ -50,41 +50,41 @@ class MoviesScreenTest : BaseRobolectricTest() {
 
         composeRule.setContent {
             MyDearMoviesTheme {
-                MoviesScreen(viewModel = viewModel)
+                SeriesScreen(viewModel = viewModel)
             }
         }
 
         composeRule.onNodeWithText(
-            RuntimeEnvironment.getApplication().getString(R.string.media_title_movies)
+            RuntimeEnvironment.getApplication().getString(R.string.media_title_series)
         ).assertIsDisplayed()
-        composeRule.onAllNodesWithText("Filme Popular").assertCountEquals(0)
+        composeRule.onAllNodesWithText("Serie Popular").assertCountEquals(0)
     }
 
     @Test
     fun shouldShowContentWhenDataIsAvailable() {
         val viewModel = createViewModel(
-            discoverFlow = successPagingFlow(listOf(sampleContent("Filme Popular")))
+            discoverFlow = successPagingFlow(listOf(sampleContent("Serie Popular")))
         )
 
         composeRule.setContent {
             MyDearMoviesTheme {
-                MoviesScreen(viewModel = viewModel)
+                SeriesScreen(viewModel = viewModel)
             }
         }
 
-        composeRule.onNodeWithText("Filme Popular").assertIsDisplayed()
+        composeRule.onNodeWithText("Serie Popular").assertIsDisplayed()
     }
 
     @Test
     fun shouldShowErrorStateWhenFailureOccurs() {
-        val errorMessage = "falha-movies"
+        val errorMessage = "falha-series"
         val viewModel = createViewModel(
             discoverFlow = errorPagingFlow(errorMessage)
         )
 
         composeRule.setContent {
             MyDearMoviesTheme {
-                MoviesScreen(viewModel = viewModel)
+                SeriesScreen(viewModel = viewModel)
             }
         }
 
@@ -95,24 +95,24 @@ class MoviesScreenTest : BaseRobolectricTest() {
 
     private fun createViewModel(
         discoverFlow: Flow<PagingData<ContentModel>>
-    ): MoviesViewModel {
+    ): SeriesViewModel {
         val getGenresUseCase: GetGenresUseCase = mockk()
         val getMediaDiscoverUseCase: GetMediaDiscoverUseCase = mockk()
         val getWatchProvidersUseCase: GetWatchProvidersUseCase = mockk()
 
-        every { getGenresUseCase(MediaType.MOVIE) } returns flowOf(emptyList())
+        every { getGenresUseCase(MediaType.TV) } returns flowOf(emptyList())
         every {
             getMediaDiscoverUseCase(
-                MediaType.MOVIE,
+                MediaType.TV,
                 any(),
                 any(),
                 any(),
                 any()
             )
         } returns discoverFlow
-        every { getWatchProvidersUseCase(MediaType.MOVIE) } returns flowOf(DomainResult.Success(emptyList()))
+        every { getWatchProvidersUseCase(MediaType.TV) } returns flowOf(DomainResult.Success(emptyList()))
 
-        return MoviesViewModel(
+        return SeriesViewModel(
             getGenresUseCase = getGenresUseCase,
             getMediaDiscoverUseCase = getMediaDiscoverUseCase,
             getWatchProvidersUseCase = getWatchProvidersUseCase
@@ -120,11 +120,11 @@ class MoviesScreenTest : BaseRobolectricTest() {
     }
 
     private fun sampleContent(title: String) = ContentModel(
-        id = 10,
+        id = 20,
         title = title,
-        releaseDate = "2026-05-01",
-        ratingPercentage = 90f,
-        imageUrl = "/movie.jpg",
-        mediaType = MediaType.MOVIE
+        releaseDate = "2026-03-01",
+        ratingPercentage = 82f,
+        imageUrl = "/series.jpg",
+        mediaType = MediaType.TV
     )
 }

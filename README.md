@@ -270,8 +270,6 @@ Base test infrastructure:
 - `roboletric/base/BaseRobolectricTest.kt`
 - `roboletric/base/MainDispatcherRule.kt`
 
-> Note: package name currently uses `roboletric` (typo). Consider normalizing to `robolectric`.
-
 ### 3) Instrumentation Tests
 
 - Minimal template coverage exists under `androidTest`

@@ -1,4 +1,4 @@
-package com.example.mydearmovies.roboletric.base
+package com.example.mydearmovies.robolectric.base
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

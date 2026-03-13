@@ -1,4 +1,4 @@
-package com.example.mydearmovies.roboletric.screen.people
+package com.example.mydearmovies.robolectric.screen.people
 
 import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsDisplayed
@@ -15,7 +15,7 @@ import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test
 import org.robolectric.RuntimeEnvironment
-import com.example.mydearmovies.roboletric.base.BaseRobolectricTest
+import com.example.mydearmovies.robolectric.base.BaseRobolectricTest
 import kotlinx.coroutines.flow.Flow
 
 class PeopleScreenTest : BaseRobolectricTest() {
