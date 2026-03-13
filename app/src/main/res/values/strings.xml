@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">MyDearMovies</string>
+
+    <string name="nav_movies">FILMES</string>
+    <string name="nav_series">SÉRIES</string>
+    <string name="nav_home">INÍCIO</string>
+    <string name="nav_people">PESSOAS</string>
+    <string name="nav_profile">PERFIL</string>
+
+    <string name="error_network">Falha de conexão. Verifique sua internet.</string>
+    <string name="error_not_found">Conteúdo não encontrado.</string>
+    <string name="error_invalid_params">Parâmetros inválidos.</string>
+    <string name="error_generic">Algo deu errado. Tente novamente.</string>
+
+    <string name="home_tab_filmes">Filmes</string>
+    <string name="home_tab_na_tv">Na TV</string>
+    <string name="home_tab_lancamentos">Lançamentos</string>
+    <string name="home_tab_cinemas">Nos Cinemas</string>
+    <string name="home_trends_hoje">Hoje</string>
+    <string name="home_trends_semana">Nesta semana</string>
+    <string name="home_trailers_streaming">Streaming</string>
+    <string name="home_trailers_tv">Na TV</string>
+    <string name="home_trailers_alugar">Para Alugar</string>
+    <string name="home_trailers_cinemas">Nos Cinemas</string>
+    <string name="home_section_popular">Os Mais Populares</string>
+    <string name="home_section_trends">Tendências</string>
+    <string name="home_section_trailers">Últimos Trailers</string>
+    <string name="home_error_load">Erro ao carregar: %1$s</string>
+    <string name="home_error_trends">Erro ao carregar tendências: %1$s</string>
+    <string name="home_error_trailers">Erro ao carregar trailers: %1$s</string>
+
+    <string name="media_title_movies">Filmes</string>
+    <string name="media_title_series">Séries</string>
+    <string name="media_tab_popular">Populares</string>
+    <string name="media_tab_now_playing">Em Cartaz</string>
+    <string name="media_tab_upcoming">Próximas Estreias</string>
+    <string name="media_tab_top_rated">Mais Bem Avaliados</string>
+    <string name="media_tab_airing_today">Em exibição hoje</string>
+    <string name="media_tab_on_the_air">Na TV</string>
+    <string name="media_filter_clear">Limpar todos os filtros</string>
+    <string name="media_filter_where_watch">Onde assistir</string>
+    <string name="media_filter_sort">Ordenar</string>
+    <string name="media_filter_filter">Filtro</string>
+    <string name="media_error_load">Erro ao carregar: %1$s</string>
+    <string name="media_synopsis">Sinopse</string>
+    <string name="media_synopsis_unavailable">Sinopse não disponível.</string>
+    <string name="media_ver_mais">Ver mais</string>
+    <string name="media_cast">Elenco</string>
+    <string name="media_recommendations">Recomendações</string>
+    <string name="media_back">Voltar</string>
+
+    <string name="filter_title">Onde Assistir</string>
+    <string name="filter_subtitle">Pode escolher mais de uma opção para a busca.</string>
+    <string name="filter_search_provider">Buscar provedor…</string>
+    <string name="filter_clear">Limpar</string>
+    <string name="sort_title">Ordenar</string>
+    <string name="filter_screen_title">Filtro</string>
+    <string name="filter_clear_btn">Limpar</string>
+    <string name="filter_close">Fechar</string>
+    <string name="filter_search_availability">Pesquisar todas as disponibilidades?</string>
+    <string name="filter_search_episodes">Pesquisar todos os episódios?</string>
+    <string name="filter_language">Idioma</string>
+    <string name="filter_language_hint">Filtra os resultados pelo idioma original.</string>
+    <string name="filter_apply">FILTRAR</string>
+    <string name="filter_date_confirm">Confirmar</string>
+    <string name="filter_language_original">Idioma original</string>
+    <string name="filter_language_search">Buscar idioma</string>
+    <string name="filter_none">Nenhuma seleção</string>
+    <string name="filter_calendar">Abrir calendário</string>
+    <string name="filter_show_me">Mostre-me</string>
+    <string name="filter_availability">Disponibilidades</string>
+    <string name="filter_dates">Datas de Exibição</string>
+    <string name="filter_genres">Gêneros</string>
+    <string name="filter_rating">Classificação</string>
+    <string name="filter_date_from">De</string>
+    <string name="filter_date_to">Até</string>
+
+    <string name="people_title">Pessoas Populares</string>
+    <string name="people_error_load">Erro ao carregar: %1$s</string>
+    <string name="people_biography">Biografia</string>
+    <string name="people_biography_unavailable">Biografia não disponível.</string>
+    <string name="people_source_wikipedia">Fonte: Wikipédia</string>
+    <string name="people_known_for">Conhecido (a) por</string>
+    <string name="people_ver_mais">Ver mais</string>
+    <string name="people_back">Voltar</string>
+    <string name="people_known_for_label">Conhecido por: %1$s</string>
+
+    <string name="profile_placeholder">Tela Profile</string>
+    <string name="loading">Carregando…</string>
+</resources>
