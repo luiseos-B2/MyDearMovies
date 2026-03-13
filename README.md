@@ -357,7 +357,6 @@ Potential bottlenecks / future risks:
 
 ### Medium Priority
 
-- Normalize package naming typo `roboletric` -> `robolectric`
 - Consolidate duplicated test utilities (`MainDispatcherRule`) into one canonical location
 - Add static analysis (`detekt`/`ktlint`) and enforce in CI
 - Add code coverage reporting (JaCoCo) with quality thresholds
