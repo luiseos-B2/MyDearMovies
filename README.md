@@ -156,20 +156,20 @@ Bottom-tab routes:
 
 ```mermaid
 flowchart TD
-  MAIN[main] --> MOVIES[movies]
-  MAIN --> SERIES[series]
-  MAIN --> HOME[home]
-  MAIN --> ACTORS[actors]
-  MAIN --> PROFILE[profile]
+  MAIN["main"] --> MOVIES["movies"]
+  MAIN --> SERIES["series"]
+  MAIN --> HOME["home"]
+  MAIN --> ACTORS["actors"]
+  MAIN --> PROFILE["profile"]
 
-  HOME --> MEDIA_DETAILS[media_details/{mediaType}/{mediaId}]
+  HOME --> MEDIA_DETAILS["media_details (mediaType, mediaId)"]
   MOVIES --> MEDIA_DETAILS
   SERIES --> MEDIA_DETAILS
-  ACTORS --> PERSON_DETAILS[person_details/{personId}]
+  ACTORS --> PERSON_DETAILS["person_details (personId)"]
 
-  MEDIA_DETAILS --> MEDIA_BIO[media_biography/{mediaType}/{mediaId}]
+  MEDIA_DETAILS --> MEDIA_BIO["media_biography (mediaType, mediaId)"]
   MEDIA_DETAILS --> PERSON_DETAILS
-  PERSON_DETAILS --> PERSON_BIO[person_biography/{personId}]
+  PERSON_DETAILS --> PERSON_BIO["person_biography (personId)"]
 ```
 
 ---
