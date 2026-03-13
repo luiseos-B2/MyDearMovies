@@ -9,7 +9,6 @@ on:
       - synchronize
       - reopened
 
-# Evita execuções duplicadas para o mesmo PR.
 concurrency:
   group: android-ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -23,18 +22,15 @@ jobs:
       contents: read
 
     steps:
-      # 1) Faz checkout do código do PR.
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2) Configura JDK 17 (Temurin) para o Android Gradle Plugin.
       - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
-      # 3) Cache manual do Gradle para acelerar builds.
       - name: Cache Gradle dependencies
         uses: actions/cache@v4
         with:
@@ -45,27 +41,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # 4) Garante permissão de execução do wrapper.
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x ./gradlew
 
-      # (Opcional) Lint Android para detectar problemas de qualidade cedo.
       - name: Run Android lint
         run: ./gradlew lint --parallel --build-cache
 
-      # 5) Build completo do projeto.
       - name: Build project
         run: ./gradlew build --parallel --build-cache
 
-      # 6) Executa todos os testes unitários.
       - name: Run unit tests
         run: ./gradlew test --parallel --build-cache
 
-      # 7) Executa testes Robolectric (normalmente em testDebugUnitTest).
       - name: Run Robolectric tests
         run: ./gradlew testDebugUnitTest --parallel --build-cache
 
-      # 8) Publica relatórios de testes mesmo quando houver falha.
       - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
